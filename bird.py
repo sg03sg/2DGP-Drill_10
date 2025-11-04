@@ -11,7 +11,8 @@ class Bird:
         self.x, self.y =  x,y
         if Bird.image == None:
              Bird.image = load_image('bird.png')
-        self.speed = 100
+        self.dir = 1
+        self.face_dir = 1
 
     def update(self): pass
 
