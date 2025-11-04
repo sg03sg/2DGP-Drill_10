@@ -27,7 +27,7 @@ def init():
     global running
 
     global bird
-    bird_x,bird_y = 200,550
+    bird_x,bird_y = 1600//2,550
 
     running = True
     grass = Grass()
@@ -36,12 +36,12 @@ def init():
     boy = Boy()
     game_world.add_object(boy, 1)
 
-    for i in (10):
+    for i in range(10):
         if i%2 == 1:
-            bird_x = 230
-            bird_y += 25
+            bird_x = 1600//2 + 25
+            bird_y -= 25
         else:
-            bird_X = 200
+            bird_x = 1600//2
         bird = Bird(bird_x,bird_y)
         game_world.add_object(bird,1)
 
