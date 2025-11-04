@@ -1,0 +1,130 @@
+{
+    "sprites": [
+        {
+            "name": "bird_animation_0",
+            "x": 34.0,
+            "y": 362.0,
+            "width": 146.0,
+            "height": 143.0,
+            "pivotX": 73.0,
+            "pivotY": 71.5
+        },
+        {
+            "name": "bird_animation_1",
+            "x": 216.0,
+            "y": 363.0,
+            "width": 146.0,
+            "height": 141.0,
+            "pivotX": 73.0,
+            "pivotY": 70.5
+        },
+        {
+            "name": "bird_animation_2",
+            "x": 398.0,
+            "y": 364.0,
+            "width": 146.0,
+            "height": 130.0,
+            "pivotX": 73.0,
+            "pivotY": 65.0
+        },
+        {
+            "name": "bird_animation_3",
+            "x": 555.0,
+            "y": 367.0,
+            "width": 171.0,
+            "height": 122.0,
+            "pivotX": 85.5,
+            "pivotY": 61.0
+        },
+        {
+            "name": "bird_animation_4",
+            "x": 728.0,
+            "y": 370.0,
+            "width": 182.0,
+            "height": 88.0,
+            "pivotX": 91.0,
+            "pivotY": 44.0
+        },
+        {
+            "name": "bird_animation_5",
+            "x": 34.0,
+            "y": 171.0,
+            "width": 146.0,
+            "height": 118.0,
+            "pivotX": 73.0,
+            "pivotY": 59.0
+        },
+        {
+            "name": "bird_animation_6",
+            "x": 216.0,
+            "y": 166.0,
+            "width": 146.0,
+            "height": 124.0,
+            "pivotX": 73.0,
+            "pivotY": 62.0
+        },
+        {
+            "name": "bird_animation_7",
+            "x": 398.0,
+            "y": 170.0,
+            "width": 146.0,
+            "height": 120.0,
+            "pivotX": 73.0,
+            "pivotY": 60.0
+        },
+        {
+            "name": "bird_animation_8",
+            "x": 580.0,
+            "y": 180.0,
+            "width": 146.0,
+            "height": 109.0,
+            "pivotX": 73.0,
+            "pivotY": 54.5
+        },
+        {
+            "name": "bird_animation_9",
+            "x": 762.0,
+            "y": 177.0,
+            "width": 146.0,
+            "height": 110.0,
+            "pivotX": 73.0,
+            "pivotY": 55.0
+        },
+        {
+            "name": "bird_animation_10",
+            "x": 34.0,
+            "y": 6.0,
+            "width": 146.0,
+            "height": 108.0,
+            "pivotX": 73.0,
+            "pivotY": 54.0
+        },
+        {
+            "name": "bird_animation_11",
+            "x": 216.0,
+            "y": 6.0,
+            "width": 146.0,
+            "height": 106.0,
+            "pivotX": 73.0,
+            "pivotY": 53.0
+        },
+        {
+            "name": "bird_animation_12",
+            "x": 376.0,
+            "y": 23.0,
+            "width": 168.0,
+            "height": 88.0,
+            "pivotX": 84.0,
+            "pivotY": 44.0
+        },
+        {
+            "name": "bird_animation_13",
+            "x": 546.0,
+            "y": 22.0,
+            "width": 180.0,
+            "height": 114.0,
+            "pivotX": 90.0,
+            "pivotY": 57.0
+        }
+    ]
+}
