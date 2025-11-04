@@ -3,6 +3,18 @@ import game_world
 import game_framework
 from random import randint
 
+def wall_check(x,dir,face_dir):
+    if x < 25:
+        x = 25
+        dir*= -1
+        face_dir *= -1
+    elif x > 1600 - 25:
+        x = 1600 - 25
+        dir *= -1
+        face_dir *= -1
+    return x,dir,face_dir
+
+
 #속도는 35km/h, 크기는 20cm*20cm
 
 class Bird:
@@ -14,7 +26,9 @@ class Bird:
         self.dir = 1
         self.face_dir = 1
 
-    def update(self): pass
+    def update(self):
+        self.x,self.dir,self.face_dir =wall_check(self.x,self.dir,self.face_dir)
+        pass
 
 
     def handle_event(self, event): pass
