@@ -19,7 +19,7 @@ def wall_check(x,dir,face_dir):
         face_dir *= -1
     return x,dir,face_dir
 
-#크기는 20cm*20cm
+#크기는 90cm*90cm
 #속도는 35km/h
 PIXEL_PER_METER = (10.0 / 0.3)
 RUN_SPEED_KMPH = 35.0
@@ -45,14 +45,19 @@ class Bird:
 
     def update(self):
         self.x,self.dir,self.face_dir =wall_check(self.x,self.dir,self.face_dir)
-        self.frames = (self.frames + 1) % 14
-        pass
+        self.frames = (self.frames + FRAMES_PER_SECOND *game_framework.frame_time) % 14
+        self.x += self.dir * RUN_SPEED_PPS * game_framework.frame_time
 
 
     def handle_event(self, event): pass
 
     def draw(self):
+        frame_y = Bird.image.h - sprites[int(self.frames)]["y"] - sprites[int(self.frames)]["height"]
+
         if self.face_dir == 1:
-            Bird.image.clip_draw(int(sprites[self.frames]["x"]),int(sprites[self.frames]["y"]),int(sprites[self.frames]["width"]),int(sprites[self.frames]["height"]),self.x, self.y)
-        else: #self.face_dir == -1
-            Bird.image.clip_composite_draw(int(sprites[self.frames]["x"]),int(sprites[self.frames]["y"]),int(sprites[self.frames]["width"]),int(sprites[self.frames]["height"]),0, 'v', self.x, self.y)
+            Bird.image.clip_draw(int(sprites[int(self.frames)]["x"]),int(frame_y),int(sprites[int(self.frames)]["width"]),int(sprites[int(self.frames)]["height"]),self.x, self.y,30,30)
+        elif self.face_dir == -1:
+            Bird.image.clip_composite_draw(int(sprites[int(self.frames)]["x"]),int(frame_y),int(sprites[int(self.frames)]["width"]),int(sprites[int(self.frames)]["height"]),3.141592, 'v', self.x, self.y,30,30)
+
+
+
