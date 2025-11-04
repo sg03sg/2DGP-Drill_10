@@ -1,6 +1,12 @@
 from pico2d import load_image, get_time, load_font
 import game_framework
 from random import randint
+import json
+
+with open("bird_animation_data.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+sprites = data["sprites"]
 
 def wall_check(x,dir,face_dir):
     if x < 25:
@@ -29,20 +35,24 @@ FRAMES_PER_SECOND = FRAMES_PER_ACTION * ACTION_PER_TIME
 
 class Bird:
     image = None
-    def __init__(self,x = 200, y = 550):
+    def __init__(self,x = 1600//2, y = 550):
         self.x, self.y =  x,y
         if Bird.image == None:
-             Bird.image = load_image('bird.png')
+             Bird.image = load_image('bird_animation.png')
         self.dir = 1
         self.face_dir = 1
+        self.frames = 0
 
     def update(self):
         self.x,self.dir,self.face_dir =wall_check(self.x,self.dir,self.face_dir)
+        self.frames = (self.frames + 1) % 14
         pass
 
 
     def handle_event(self, event): pass
 
-
     def draw(self):
-        Bird.image.draw(self.x, self.y)
+        if self.face_dir == 1:
+            Bird.image.clip_draw(int(sprites[self.frames]["x"]),int(sprites[self.frames]["y"]),int(sprites[self.frames]["width"]),int(sprites[self.frames]["height"]),self.x, self.y)
+        else: #self.face_dir == -1
+            Bird.image.clip_composite_draw(int(sprites[self.frames]["x"]),int(sprites[self.frames]["y"]),int(sprites[self.frames]["width"]),int(sprites[self.frames]["height"]),0, 'v', self.x, self.y)
