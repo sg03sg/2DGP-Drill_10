@@ -48,6 +48,7 @@ def run(start_mode):
     start_mode.init()
 
     global frame_time
+    frame_time = 0.0
     current_time = time.time()
 
     while running:
@@ -57,9 +58,8 @@ def run(start_mode):
 
         frame_time = time.time() - current_time
         frame_rate = 1.0 / frame_time
-        print(f'Frame Time : {frame_time:4.f}seconds, Frame Rate: {frame_rate:4.2f}FPS')
+        print(f'Frame Time : {frame_time:.4f}seconds, Frame Rate: {frame_rate:.4f}FPS')
         current_time += frame_time
-        # 여기를 채우시오.
 
     # repeatedly delete the top of the stack
     while (len(stack) > 0):
