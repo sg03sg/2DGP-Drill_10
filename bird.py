@@ -1,5 +1,4 @@
 from pico2d import load_image, get_time, load_font
-import game_world
 import game_framework
 from random import randint
 
@@ -14,8 +13,19 @@ def wall_check(x,dir,face_dir):
         face_dir *= -1
     return x,dir,face_dir
 
+#크기는 20cm*20cm
+#속도는 35km/h
+PIXEL_PER_METER = (10.0 / 0.3)
+RUN_SPEED_KMPH = 35.0
+RUN_SPEED_MPM = (RUN_SPEED_KMPH* 1000.0 / 60.0)
+RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
+RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
 
-#속도는 35km/h, 크기는 20cm*20cm
+#날개짓 속도 1초에 10번
+TIME_PER_ACTION =0.1
+ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
+FRAMES_PER_ACTION =14
+FRAMES_PER_SECOND = FRAMES_PER_ACTION * ACTION_PER_TIME
 
 class Bird:
     image = None
